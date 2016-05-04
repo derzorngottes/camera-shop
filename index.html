@@ -31,7 +31,7 @@
       </div>
       <div class='col-md-6'>
         <h4>{{ camera.title }}</h4>
-        <p>{{ camera.price | currency }}</p>
+        <p ng-class='{ onsale: camera.onSale }'>{{ camera.price | currency }}</p>
         <p>Rating: {{ camera.rating }}</p>
       </div>
     </div>

@@ -16,3 +16,8 @@
 h2 {
 margin-left: 5%;
 }
+
+.onsale {
+  font-weight: bold;
+  color: darkorange;
+}
