@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app='camerashop-app' ng-controller='cameraController'>
+  <head>
+    <meta charset="utf-8">
+    <title>Camera Shop</title>
+    <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css' media='screen' rel='stylesheet'>
+    <link href='style.css' rel='stylesheet'>
+  </head>
+  <body>
+
+  <div class='row'>
+    <div class='col-md-6 col-md-offset-1'>
+      <h2>Camera Shop</h2>
+      <br>
+      <hr>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-md-6 col-md-offset-1'>
+      <select class='prettySelect' ng-model='sorting' ng-options = 'sorting.val as sorting.id for sorting in sortBy'>
+      </select>
+      <br><br>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='row cameraWares' ng-repeat='camera in cameras | orderBy:sorting'>
+      <div class='col-md-2 cameraImgs'>
+        <img ng-src='{{ camera.image }}' height='100'>
+      </div>
+      <div class='col-md-6'>
+        <h4>{{ camera.title }}</h4>
+        <p>{{ camera.price | currency }}</p>
+        <p>Rating: {{ camera.rating }}</p>
+      </div>
+    </div>
+  </div>
+
+  <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+  <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js'></script>
+  <script type='text/javascript' src='index.js'></script>
+  </body>
+</html>
